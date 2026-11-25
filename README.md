@@ -1,1 +1,2 @@
-# Git_notes
+#notes
+#some notes about my study)
