@@ -9,3 +9,26 @@ YAML-файл чувствителен к отступам - считай про
 3. **Пайплайн (pipeline)** - весь прогон целиком, все этапы о всеми добами для одного push
 
 ![](images/Pasted%20image%2020261125232358.png)
+
+###### Пример:
+```.yaml
+stages:
+  - test
+  - build
+   
+run-tests:
+  stage: test
+  image: python:3.12
+  script: 
+    - pip install -r requirements.txt
+    - pytest
+       
+build-image:
+  stage: build
+  image: docker:latest
+  script: 
+    - docker build -t myapp .
+```
+
+###### Какие еще бывают обозначения:
+![](images/Pasted%20image%2020261126133714.png)
